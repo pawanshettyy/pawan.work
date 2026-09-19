@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "pawan shetty",
-  description: "ai & ml undergrad at tcet, mumbai. building lumia, nagarsetu, and more. open for internships.",
+  description: "ai & ml undergrad at tcet, mumbai. building production-grade systems across ai, quant finance, and distributed infrastructure. open for internships.",
 }
 
 export default function RootLayout({
