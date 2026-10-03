@@ -40,14 +40,14 @@ const projects: Project[] = [
   },
   {
     title: "InferMesh",
-    // url: "https://github.com/pawanshettyy/InferMesh",
+    // url: "https://github.com/pawanshettyy/inframesh",
     label: "View project",
     color: "yellow",
     description:
       "distributed llm inference orchestrator with an openai-compatible gateway, load-aware worker routing, kv-cache-aware affinity, redis coordination, and prometheus/grafana observability.",
     metric: "distributed systems",
     image: "/icons/soon.png",
-    comingSoon: true,
+    comingSoon: false,
   },
   {
     title: "AMR-Assist",
@@ -243,6 +243,30 @@ export default function Home() {
       "early ml research and trading signal experiments",
       "https://github.com/pawanshettyy",
     ],
+  ]
+
+  const researchPapers = [
+    {
+      title: "Duchenne Muscular Dystrophy Early Pre-Screening Using Interpretable Machine Learning",
+      description:
+          "An interpretable XGBoost-based machine learning approach for early pre-screening of Duchenne Muscular Dystrophy using clinical and demographic features.",
+      status: "research",
+      url: "#",
+    },
+    {
+      title: "Wavefront Reconstruction Using Zernike Polynomials and Fried Parameter Estimation",
+      description:
+          "Research and implementation of wavefront reconstruction using Shack-Hartmann sensing, Zernike polynomials, and atmospheric turbulence estimation.",
+      status: "research",
+      url: "#",
+    },
+    {
+      title: "Antimicrobial Resistance Intelligence with Machine Learning and Retrieval-Augmented Generation",
+      description:
+          "A clinical AI framework combining antibiotic resistance prediction with citation-grounded retrieval for antimicrobial stewardship.",
+      status: "in progress",
+      url: "#",
+    },
   ]
 
   const pastRows = Array.from(
@@ -554,6 +578,52 @@ export default function Home() {
                   find even more on my github
                 </a>
               </div>
+
+              {/* Research Papers */}
+              <section className="mt-12 md:mt-16">
+                <Reveal>
+                  <h2 className="mb-4 text-2xl font-semibold tracking-tight md:mb-6 md:text-3xl">
+                    research papers
+                  </h2>
+                </Reveal>
+
+                <Reveal delay={75}>
+                  <div className="space-y-3">
+                    {researchPapers.map((paper, i) => (
+                        <a
+                            key={paper.title}
+                            href={paper.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group block rounded-xl bg-black p-4 ring-1 ring-white/10 transition-all duration-200 hover:-translate-y-1 hover:ring-white/40 hover:bg-white/[0.03] md:p-5"
+                            style={{ transitionDelay: `${i * 20}ms` }}
+                        >
+                          <div className="flex flex-col gap-2">
+                            <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                              <h3 className="text-base font-medium text-white md:text-lg">
+                                {paper.title}
+                              </h3>
+
+                              <span className="shrink-0 text-xs text-white/40">
+                {paper.status}
+              </span>
+                            </div>
+
+                            <p className="text-sm leading-6 text-white/60 md:text-[15px]">
+                              {paper.description}
+                            </p>
+
+                            <span className="mt-1 text-xs text-white/40 transition-colors group-hover:text-white/70">
+              read paper →
+            </span>
+                          </div>
+                        </a>
+                    ))}
+                  </div>
+                </Reveal>
+              </section>
+
+              <GitHubContribGraph username="pawanshettyy" />
 
               <GitHubContribGraph username="pawanshettyy" />
 
